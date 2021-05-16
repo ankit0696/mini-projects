@@ -115,4 +115,8 @@ body {
     max-width: 400px;
     width: 90%;
   }
+
+  .user-info {
+    margin-left: 0;
+  }
 }
