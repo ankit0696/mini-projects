@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
+:root {
+  --color-primary-light: #4228b4;
+  --color-background: #6f42c1;
+}
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: #2a2a72;
+  background-color: var(--color-primary-light);
   color: #fff;
   font-family: 'Poppins', sans-serif;
   display: flex;
@@ -25,7 +29,7 @@ body {
 .user-form input {
   width: 100%;
   display: block;
-  background-color: #4c2aa5;
+  background-color: var(--color-background);
   border: none;
   border-radius: 10px;
   color: #fff;
@@ -46,7 +50,7 @@ body {
 
 .card {
   max-width: 800px;
-  background-color: #4c2aa5;
+  background-color: var(--color-background);
   border-radius: 20px;
   box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
     0 15px 40px rgba(0, 0, 0, 0.1);
@@ -57,7 +61,7 @@ body {
 
 .avatar {
   border-radius: 50%;
-  border: 10px solid #2a2a72;
+  border: 10px solid var(--color-primary-light);
   height: 150px;
   width: 150px;
 }
@@ -92,7 +96,7 @@ body {
 .repo {
   text-decoration: none;
   color: #fff;
-  background-color: #2a2a72;
+  background-color: var(--color-primary-light);
   font-size: 0.7rem;
   padding: 0.25rem 0.5rem;
   margin-right: 0.5rem;
@@ -104,6 +108,7 @@ body {
   .card {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   .user-form {
