@@ -9,6 +9,7 @@ async function getUser(username) {
     const { data } = await axios(APIURL + username)
     createUserCard(data)
     getRepos(username)
+    search.blur()
   } catch (error) {
     if (error.response.status == 404) {
       createErrorCard('No profile with this username')
