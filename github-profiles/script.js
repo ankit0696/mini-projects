@@ -32,8 +32,8 @@ function createUserCard(user) {
             <img src="${user.avatar_url}" alt="" class="avatar">
         </div>
         <div class="user-info">
-            <h2>${user.name}</h2>
-            <p>${user.bio}</p>
+            <h2>${user.name ? user.name : 'Name not found'}</h2>
+            <p>${user.bio ? user.bio : 'No bio found'}</p>
             <ul>
                 <li>${user.followers} <strong>Followers</strong></li>
                 <li>${user.following} <strong>Following</strong></li>
