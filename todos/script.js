@@ -41,6 +41,7 @@ function addTodo(todo) {
     todosUL.appendChild(todoEl)
 
     input.value = ''
+    input.focus()
     updateLS()
   }
 }
