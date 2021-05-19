@@ -8,6 +8,7 @@ if (todos) {
     addTodo(todo)
   })
 }
+
 from.addEventListener('submit', (e) => {
   e.preventDefault()
   addTodo()
@@ -55,4 +56,13 @@ function updateLS() {
   })
   console.log(todos)
   localStorage.setItem('todos', JSON.stringify(todos))
+}
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker
+      .register('/todos/sw.js')
+      .then((res) => console.log('service worker registered'))
+      .catch((err) => console.log('service worker not registered', err))
+  })
 }

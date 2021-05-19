@@ -49,6 +49,8 @@ form {
   max-width: 95%;
   width: 400px;
   display: flex;
+  flex-direction: row;
+  padding: 2px;
 }
 
 .input {
@@ -58,6 +60,7 @@ form {
   padding: 1rem 2rem;
   display: block;
   width: 100%;
+  flex-grow: 2;
 }
 
 .input:focus {
