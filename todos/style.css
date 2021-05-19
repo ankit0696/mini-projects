@@ -48,6 +48,7 @@ form {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 95%;
   width: 400px;
+  display: flex;
 }
 
 .input {
@@ -72,13 +73,16 @@ form {
   background-color: #fff;
   padding: 0;
   list-style-type: none;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 95%;
+  width: 402px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .todos li {
   border: 1px solid #e5e5e5;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 2.3rem;
   padding: 1rem 2rem;
 }
 .todos li i.delete {
@@ -101,5 +105,15 @@ small.info {
 small.credits {
   color: var(--primary-color);
   font-size: 1.7rem;
+  margin: 0;
+}
+
+.tick {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 3rem;
+  color: #23a212;
   margin: 0;
 }

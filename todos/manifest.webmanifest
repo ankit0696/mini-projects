@@ -1,0 +1,27 @@
+{
+    "name": "todos",
+    "short_name": "todos",
+    "description": "todo application",
+    "icons": [
+        {
+            "src": "images/icons/icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "images/icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "images/icons/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#1A1A1A",
+    "theme_color": "#0A0A0A",
+    "orientation": "portrait"
+}

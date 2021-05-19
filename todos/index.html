@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         referrerpolicy="no-referrer" />
     <title>Todos</title>
+    <link rel="manifest" href="./manifest.webmanifest">
 </head>
 
 <body>
@@ -18,9 +19,11 @@
     </h1>
     <form id="form">
         <input type="text" class="input" id="input" placeholder="Enter your todo" autocomplete="off">
-        <ul class="todos" id="todos">
-        </ul>
+        <button type="submit" class="tick"><i class="far fa-check-circle"></i></button>
+
     </form>
+    <ul class="todos" id="todos">
+    </ul>
     <small class="info">Click to toggle complete, cross to delete</small>
 
     <script src="./script.js"></script>
