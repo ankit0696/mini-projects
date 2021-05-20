@@ -1,3 +1,3 @@
 # Mini Projects
 
-[Go to Link](https://mini-pro.netlify.app/)
+[Go n Check Out](https://mini-pro.netlify.app/)
