@@ -1,13 +1,13 @@
 const todosApp = 'todos'
 const assets = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  './manifest.webmanifest',
-  '/images/icons/icon-512x512.png',
-  '/images/icons/icon-384x384.png',
-  '/favicon.ico',
+  '/todos/',
+  '/todos/index.html',
+  '/todos/style.css',
+  '/todos/script.js',
+  '/todos/manifest.webmanifest',
+  '/todos/images/icons/icon-512x512.png',
+  '/todos/images/icons/icon-384x384.png',
+  '/todos/favicon.ico',
 ]
 
 self.addEventListener('install', (installEvent) => {
