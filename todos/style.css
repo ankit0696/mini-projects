@@ -2,6 +2,7 @@
 
 :root {
   --primary-color: rgb(226, 131, 131);
+  --primary-shadow: rgba(226, 131, 131, 0.4);
 }
 * {
   box-sizing: border-box;
@@ -45,7 +46,7 @@ h1 {
 }
 
 form {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 10px var(--primary-shadow);
   max-width: 95%;
   width: 400px;
   display: flex;
@@ -87,15 +88,31 @@ form {
   cursor: pointer;
   font-size: 2.3rem;
   padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todos li.completed {
+  color: #b6b6b6;
+}
+.todos li.completed span {
+  color: #b6b6b6;
+  text-decoration: line-through;
+}
+
+.todos li i.circle {
+  color: var(--primary-color);
+  padding-right: 1rem;
 }
 .todos li i.delete {
-  margin-right: 1rem;
+  margin-left: auto;
   color: var(--primary-color);
 }
 
-.todos li.completed {
-  text-decoration: line-through;
+.todos li.completed i {
   color: #b6b6b6;
+  display: inline-block;
+  text-decoration: none;
 }
 
 small.info {

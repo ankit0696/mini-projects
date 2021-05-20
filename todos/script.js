@@ -16,6 +16,7 @@ from.addEventListener('submit', (e) => {
 })
 
 input.addEventListener('keyup', (e) => {
+  e.preventDefault()
   if (input.value.length > 0) {
     tick.style.color = 'green'
   } else {
@@ -34,13 +35,19 @@ function addTodo(todo) {
     if (todo && todo.completed) {
       todoEl.classList.add('completed')
     }
+    todoEl.innerHTML =
+      '<i class="far fa-circle circle"></i><span>' +
+      todoText +
+      '</span><i class="far fa-times-circle delete"></i>'
+
     //remove todo
-    todoEl.innerHTML = '<i class="far fa-times-circle delete"></i>' + todoText
     let tickEl = todoEl.getElementsByTagName('i')
-    tickEl[0].addEventListener('click', (e) => {
+    tickEl[1].addEventListener('click', (e) => {
       todoEl.remove()
       updateLS()
     })
+
+    // todoEl.addEventListener('')
     //strike out todo
     todoEl.addEventListener('click', (e) => {
       todoEl.classList.toggle('completed')
