@@ -1,6 +1,7 @@
 const from = document.getElementById('form')
 const input = document.getElementById('input')
 const todosUL = document.getElementById('todos')
+const tick = document.getElementById('tick')
 
 const todos = JSON.parse(localStorage.getItem('todos'))
 if (todos) {
@@ -12,6 +13,14 @@ if (todos) {
 from.addEventListener('submit', (e) => {
   e.preventDefault()
   addTodo()
+})
+
+input.addEventListener('keyup', (e) => {
+  if (input.value.length > 0) {
+    tick.style.color = 'green'
+  } else {
+    tick.style.color = '#b6b6b6'
+  }
 })
 
 function addTodo(todo) {
