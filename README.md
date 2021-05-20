@@ -1,3 +1,3 @@
 # Mini Projects
 
-[text](https://mini-pro.netlify.app/)
+[Go to Link](https://mini-pro.netlify.app/)
