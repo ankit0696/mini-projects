@@ -55,7 +55,7 @@ function updateLS() {
       completed: todoEL.classList.contains('completed'),
     })
   })
-  console.log(todos)
+  // console.log(todos)
   localStorage.setItem('todos', JSON.stringify(todos))
 }
 

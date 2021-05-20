@@ -4,6 +4,7 @@ const assets = [
   '/index.html',
   '/style.css',
   '/script.js',
+  './manifest.webmanifest',
   '/images/icons/icon-512x512.png',
   '/images/icons/icon-384x384.png',
   '/favicon.ico',
@@ -15,6 +16,10 @@ self.addEventListener('install', (installEvent) => {
       cache.addAll(assets)
     })
   )
+})
+
+self.addEventListener('activate', (e) => {
+  self.clients.claim()
 })
 
 self.addEventListener('fetch', (fetchEvent) => {
