@@ -73,6 +73,16 @@ form {
   font-size: 2.5rem;
 }
 
+.tick {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 3rem;
+  color: #b6b6b6;
+  margin: 0;
+}
+
 .todos {
   background-color: #fff;
   padding: 0;
@@ -128,12 +138,13 @@ small.credits {
   margin: 0;
 }
 
-.tick {
-  background-color: #fff;
+button.delete-all {
+  background-color: var(--primary-color);
+  margin-top: 4rem;
   border: none;
-  cursor: pointer;
-  outline: none;
-  font-size: 3rem;
-  color: #b6b6b6;
-  margin: 0;
+  width: 401px;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }

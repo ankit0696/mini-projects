@@ -2,9 +2,11 @@ const from = document.getElementById('form')
 const input = document.getElementById('input')
 const todosUL = document.getElementById('todos')
 const tick = document.getElementById('tick')
+const deleteAll = document.getElementById('delete-container')
 
 const todos = JSON.parse(localStorage.getItem('todos'))
 const swipeValue = 100
+let todoCount = 0
 
 if (todos) {
   todos.forEach((todo) => {
@@ -46,6 +48,8 @@ function addTodo(todo) {
     let tickEl = todoEl.getElementsByTagName('i')
     tickEl[1].addEventListener('click', (e) => {
       todoEl.remove()
+      todoCount--
+      updateRemoveBtn()
       updateLS()
     })
 
@@ -65,9 +69,9 @@ function addTodo(todo) {
     })
     todoEl.addEventListener('touchend', (e) => {
       if (x1 + swipeValue < x2) {
-        todoEl.classList.add('removed-item')
-
         todoEl.remove()
+        todoCount--
+        updateRemoveBtn()
         updateLS()
       } else {
         todoEl.style.marginLeft = 0
@@ -80,6 +84,8 @@ function addTodo(todo) {
     })
 
     todosUL.appendChild(todoEl)
+    todoCount++
+    updateRemoveBtn()
 
     input.value = ''
     input.focus()
@@ -96,8 +102,34 @@ function updateLS() {
       completed: todoEL.classList.contains('completed'),
     })
   })
-  // console.log(todos)
   localStorage.setItem('todos', JSON.stringify(todos))
+}
+
+function updateRemoveBtn() {
+  let removeBtn = document.getElementById('delete-all')
+  if (todoCount > 2) {
+    if (removeBtn == null) {
+      let deleteBtn = document.createElement('button')
+      deleteBtn.classList.add('delete-all')
+      deleteBtn.id = 'delete-all'
+      deleteBtn.innerText = 'Remove all tasks'
+      deleteAll.appendChild(deleteBtn)
+      deleteBtn.addEventListener('click', () => {
+        let todosList = document.querySelectorAll('li')
+        if (todosList) {
+          todosList.forEach((item) => {
+            item.remove()
+            updateLS()
+          })
+        }
+      })
+    } else {
+    }
+  } else {
+    if (removeBtn) {
+      removeBtn.remove()
+    }
+  }
 }
 
 if ('serviceWorker' in navigator) {
