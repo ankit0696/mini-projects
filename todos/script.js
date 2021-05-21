@@ -72,7 +72,7 @@ function addTodo(todo) {
         updateRemoveBtn()
         updateLS()
       } else {
-        todoEl.style.marginLeft = 0
+        todoEl.style.transform = `translateX(0px)`
       }
     })
     //strike out todo
