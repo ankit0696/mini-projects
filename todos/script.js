@@ -57,14 +57,12 @@ function addTodo(todo) {
 
     todoEl.addEventListener('touchstart', (e) => {
       x1 = e.touches[0].clientX
-      y1 = e.touches[0].clientY
     })
     todoEl.addEventListener('touchmove', (e) => {
       x2 = e.touches[0].clientX
-      y2 = e.touches[0].clientY
       moved = x2 - x1
       if (moved > 0) {
-        todoEl.style.marginLeft = moved + 'px'
+        todoEl.style.transform = `translateX(${moved}px)`
       }
     })
     todoEl.addEventListener('touchend', (e) => {
