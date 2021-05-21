@@ -4,6 +4,8 @@ const todosUL = document.getElementById('todos')
 const tick = document.getElementById('tick')
 
 const todos = JSON.parse(localStorage.getItem('todos'))
+const swipeValue = 100
+
 if (todos) {
   todos.forEach((todo) => {
     addTodo(todo)
@@ -47,7 +49,30 @@ function addTodo(todo) {
       updateLS()
     })
 
-    // todoEl.addEventListener('')
+    let x1, x2, y1, y2, moved
+
+    todoEl.addEventListener('touchstart', (e) => {
+      x1 = e.touches[0].clientX
+      y1 = e.touches[0].clientY
+    })
+    todoEl.addEventListener('touchmove', (e) => {
+      x2 = e.touches[0].clientX
+      y2 = e.touches[0].clientY
+      moved = x2 - x1
+      if (moved > 0) {
+        todoEl.style.marginLeft = moved + 'px'
+      }
+    })
+    todoEl.addEventListener('touchend', (e) => {
+      if (x1 + swipeValue < x2) {
+        todoEl.classList.add('removed-item')
+
+        todoEl.remove()
+        updateLS()
+      } else {
+        todoEl.style.marginLeft = 0
+      }
+    })
     //strike out todo
     todoEl.addEventListener('click', (e) => {
       todoEl.classList.toggle('completed')
