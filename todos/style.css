@@ -92,6 +92,7 @@ form {
   max-width: 95%;
   width: 402px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .todos li {
