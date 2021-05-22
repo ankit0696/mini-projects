@@ -120,6 +120,7 @@ function updateRemoveBtn() {
             updateLS()
           })
         }
+        deleteBtn.remove()
       })
     }
   } else {
