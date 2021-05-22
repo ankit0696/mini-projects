@@ -121,8 +121,6 @@ function updateRemoveBtn() {
           })
         }
       })
-      updateRemoveBtn()
-    } else {
     }
   } else {
     if (removeBtn) {
